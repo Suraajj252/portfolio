@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Suraj Kumar S — DevOps Engineering Console</title>
+<meta name="description" content="Suraj Kumar S — AWS DevOps Engineer. Interactive engineering console." />
+<link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+<!-- Ambient grid backdrop -->
+<div class="grid-overlay" aria-hidden="true"></div>
+<svg id="cursor-trail" aria-hidden="true"><path id="cursor-trail-path" d=""></path></svg>
+
+<!-- ===================== PRELOADER: STARTING GRID ===================== -->
+<div id="preloader" role="status" aria-label="Loading console">
+  <div class="grid-lights">
+    <div class="grid-light" data-light="1"></div>
+    <div class="grid-light" data-light="2"></div>
+    <div class="grid-light" data-light="3"></div>
+    <div class="grid-light" data-light="4"></div>
+    <div class="grid-light" data-light="5"></div>
+  </div>
+  <div class="grid-label">Lights out and away we go</div>
+</div>
+
+<!-- ===================== PROGRESS RAIL ===================== -->
+<div id="progress-rail" aria-hidden="true"><div id="progress-rail__fill"></div></div>
+
+<!-- ===================== HUD NAV ===================== -->
+<header id="hud-nav">
+  <div class="hud-nav__id">SURAJ<span>_</span>KUMAR.SYS</div>
+  <nav class="hud-nav__links">
+    <a href="#profile" data-nav="profile">Profile</a>
+    <a href="#skills" data-nav="skills">Telemetry</a>
+    <a href="#experience" data-nav="experience">Track Log</a>
+    <a href="#projects" data-nav="projects">Build</a>
+    <a href="#certifications" data-nav="certifications">Credentials</a>
+    <a href="#contact" data-nav="contact">Contact</a>
+  </nav>
+  <div class="hud-nav__status"><span class="status-ring"></span>SYSTEM READY</div>
+</header>
+
+<main id="scroll-track">
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero" class="section" aria-label="Introduction">
+    <div class="hero__mask"><h1 class="hero__title">Suraj Kumar <span class="accent">S</span></h1></div>
+    <p class="hero__role">AWS DevOps Engineer — Site Reliability &amp; Cloud Automation</p>
+    <p class="hero__summary">
+      DevOps engineer running AWS infrastructure (EC2, EKS, ECS, Terraform, CI/CD) with a production
+      reliability background from Azure enterprise environments. Ships automation that removes manual
+      toil and keeps systems observable.
+    </p>
+    <div class="hero__meta">
+      <span>Bengaluru, India</span>
+      <a href="mailto:iamsuraj252@gmail.com">iamsuraj252@gmail.com</a>
+      <a href="tel:+919113898952">+91 9113898952</a>
+      <a href="https://linkedin.com/in/suraj-kumar-s-39751b393" target="_blank" rel="noopener">linkedin.com/in/suraj-kumar-s-39751b393</a>
+    </div>
+    <div class="hero__scroll-cue">SCROLL TO ENGAGE</div>
+  </section>
+
+  <!-- ===================== PROFILE ===================== -->
+  <section id="profile" class="section" aria-label="Profile">
+    <div class="eyebrow">01 · Engineering Profile</div>
+    <h2 class="section-title reveal">Built for <em>uptime</em>,<br />wired for automation.</h2>
+    <div class="panel reveal" style="max-width:720px;">
+      <p style="margin:0;color:var(--text-mid);font-size:14px;">
+        Action-oriented DevOps engineer combining hands-on AWS infrastructure automation with a
+        production environment background in reliability engineering. Independently designed a
+        6-microservice platform on EKS Fargate, Terraform, and OIDC security. Builds automated
+        CI/CD pipelines, implements observability stacks, and owns high-priority incident response
+        across 24/7 on-call rotations.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS / TELEMETRY ===================== -->
+  <section id="skills" class="section" aria-label="Skills telemetry">
+    <div class="eyebrow">02 · Live Telemetry</div>
+    <h2 class="section-title reveal">Skills <em>dashboard</em></h2>
+    <div class="skills-grid" id="skills-grid"></div>
+
+    <div class="chart-wrap reveal">
+      <canvas id="skills-chart" role="img" aria-label="Skill proficiency radar chart"></canvas>
+      <div id="chart-fallback" class="chart-fallback-bars" hidden></div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE / TRACK LOG ===================== -->
+  <section id="experience" class="section" aria-label="Professional experience">
+    <div class="eyebrow">03 · Track Log</div>
+    <h2 class="section-title reveal">Career <em>telemetry</em></h2>
+    <div class="track-log" id="track-log"></div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects" class="section" aria-label="Featured project">
+    <div class="eyebrow">04 · Core Architecture</div>
+    <h2 class="section-title reveal">Featured <em>build</em></h2>
+    <div class="project-panel panel reveal" id="project-panel"></div>
+  </section>
+
+  <!-- ===================== CERTIFICATIONS ===================== -->
+  <section id="certifications" class="section" aria-label="Certifications and education">
+    <div class="eyebrow">05 · Credentials</div>
+    <h2 class="section-title reveal">Certifications</h2>
+    <div class="cert-grid" id="cert-grid"></div>
+    <div class="panel reveal" id="edu-panel"></div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="section" aria-label="Contact">
+    <div class="eyebrow">06 · Radio Check</div>
+    <div class="contact-grid">
+      <div>
+        <h2 class="section-title reveal" style="margin-bottom:16px;">Let's put this<br /><em>car on track.</em></h2>
+        <span class="status-tag reveal"><span class="status-ring"></span>AVAILABLE — IMMEDIATE JOINER — BENGALURU / ONSITE</span>
+      </div>
+      <div class="contact-links reveal">
+        <a href="mailto:iamsuraj252@gmail.com">iamsuraj252@gmail.com</a>
+        <a href="tel:+919113898952">+91 9113898952</a>
+        <a href="https://linkedin.com/in/suraj-kumar-s-39751b393" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© <span id="year"></span> Suraj Kumar S</span>
+  <span>Console v1.0 — built fully offline</span>
+</footer>
+
+<!-- ============ LOCAL LIBS (place actual files in ./lib/) ============ -->
+<script src="./lib/gsap.min.js" defer></script>
+<script src="./lib/ScrollTrigger.min.js" defer></script>
+<script src="./lib/chart.umd.js" defer></script>
+
+<!-- ============ APP ============ -->
+<script src="./js/data.js" defer></script>
+<script src="./js/main.js" defer></script>
+</body>
+</html>
